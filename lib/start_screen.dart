@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(
+    this.satrtQuiz, {
+    super.key,
+  });
+
+  final void Function() satrtQuiz;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +25,7 @@ class StartScreen extends StatelessWidget {
                 'images/quiz-logo.png',
                 width: 200,
                 height: 200,
+                color: Colors.white.withOpacity(0.6),
               ),
               const SizedBox(
                 height: 50,
@@ -32,17 +37,11 @@ class StartScreen extends StatelessWidget {
               const SizedBox(
                 height: 16,
               ),
-              OutlinedButton(
+              OutlinedButton.icon(
                 style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomePage(),
-                    ),
-                  );
-                },
-                child: const Text("START QUIZ"),
+                onPressed: satrtQuiz,
+                icon: const Icon(Icons.arrow_right_alt),
+                label: const Text("START QUIZ"),
               ),
             ],
           ),

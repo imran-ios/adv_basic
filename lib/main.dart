@@ -1,4 +1,4 @@
-import 'package:adv_basic/splash_screen.dart';
+import 'package:adv_basic/quiz.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,7 +9,8 @@ void main() {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      home: Quiz(),
+      debugShowCheckedModeBanner: false,
     ),
   );
 }
